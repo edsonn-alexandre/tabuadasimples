@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada simples com Javascript</title>
+</head>
+<body>
+    <h1>
+        Tabuada simples com Javascript puro
+    </h1>
+
+    <button onclick="mostrarTabuada()">Criar Tabuada</button>
+    <button onclick="limparTabuada()">Limpar Tabuada</button>
+    <br> <br>
+
+    <div id="output"></div>
+
+    <script>
+
+        function mostrarTabuada(){
+        
+            //perguntar o número para o usuário
+            var n = prompt('digite um número');
+
+            //limpa a tela quando o usuário já digita o número
+            limparTabuada();
+
+            //converter a string para número
+            n = parseFloat(n);
+
+            //criar uma variável que servirá de indice
+            var i = 1;
+
+            //enquanto indice <= 1000, concatena na variável mensagem
+            while(i <=1000){
+                mensagem += n + ' x ' + i + ' = ' + (n*i) +'<br>';
+                i++;
+            }
+
+            //mostra mensagem no output html
+            output.innerHTML = mensagem;
+            
+        }
+
+        function limparTabuada(){
+            mensagem = '';
+            output.innerHTML = mensagem;
+        }
+
+        var output = document.querySelector('#output');
+
+        var mensagem = '';
+        
+    </script>
+    
+</body>
+</html>
